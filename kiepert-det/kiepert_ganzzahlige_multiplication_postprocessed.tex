@@ -55,9 +55,9 @@ u = w = 2m\omega + 2n\omega'
 \end{equation*}
 and never becomes infinite for finite values of $u$. Since for every value of $w = 2m\omega + 2n\omega'$ there is an opposite value $w = -2m\omega - 2n\omega'$, we can interchange $w$ and $-w$ without changing the function $\sigma u$. Therefore, if we substitute $-u$ for $u$, then $\sigma u$ merely changes its sign; that is, $\sigma u$ is an \emph{odd} function.
 
-From $\sigma u$ we derive the function $\wp u$ by differentiation, namely
+From $\sigma u$ we derive the function $\wp u$ by differentiation, namely\footnote{For brevity in the following equations, we write $\frac{\sigma'}{\sigma}(u)$ instead of $\frac{\sigma' u}{\sigma u}$.}
 \begin{align*}
-\frac{d\log \sigma u}{du} = \frac{\sigma' u}{\sigma u} &= \frac{\sigma'}{\sigma}(u)\footnote{For brevity we write $\frac{\sigma'}{\sigma}(u)$ instead of $\frac{\sigma' u}{\sigma u}$.} = \frac{1}{u} + \sideset{}{'}\sum \left(\frac{1}{u-w} + \frac{1}{w} + \frac{u}{w^2}\right),\\
+\frac{d\log \sigma u}{du} = \frac{\sigma' u}{\sigma u} &= \frac{\sigma'}{\sigma}(u) = \frac{1}{u} + \sideset{}{'}\sum \left(\frac{1}{u-w} + \frac{1}{w} + \frac{u}{w^2}\right),\\
 \wp u &= -\frac{d^2\log \sigma u}{du^2} = \frac{1}{u^2} + \sideset{}{'}\sum \left(\frac{1}{(u-w)^2} - \frac{1}{w^2}\right),\\
 \wp' u &= -\frac{d^3\log \sigma u}{du^3} = \frac{-2}{u^3} - 2\sideset{}{'}\sum \frac{1}{(u-w)^3} = -2\sum \frac{1}{(u-w)^3},
 \end{align*}
@@ -133,7 +133,7 @@ From the formulas adduced, it follows that the function
 \begin{equation}
 \varphi(u) = C \frac{\sigma(u-a_1)\sigma(u-a_2)\dots\sigma(u-a_r)}{\sigma(u-b_1)\sigma(u-b_2)\dots\sigma(u-b_r)}
 \end{equation}
-possesses both periods $2\omega$ and $2\omega'$, as soon as $\Sigma a = \Sigma b$ is, because upon substitution
+possesses both periods $2\omega$ and $2\omega'$ whenever $\Sigma a = \Sigma b$, since upon substitution
 \begin{equation*}
 \varphi(u+2\omega) = \varphi(u) \quad \text{and} \quad \varphi(u+2\omega') = \varphi(u).
 \end{equation*}
@@ -159,7 +159,7 @@ For abbreviation we set
 \begin{equation*}
 \wp\omega = e_1, \quad \wp(\omega+\omega') = e_2, \quad \wp\omega' = e_3,
 \end{equation*}
-then it results, when we develop both sides of equation (11.),
+then it follows, when we expand both sides of equation (11.), that
 \begin{equation*}
 e_1 + e_2 + e_3 = 0,
 \end{equation*}
@@ -277,7 +277,7 @@ u = \frac{2\lambda\omega + 2\mu\omega'}{n},
 where $\lambda$ and $\mu$ assume the values $0, 1, 2, \dots, n-1$, but may not both vanish simultaneously. $\psi(u)$ becomes infinite only for $u \equiv 0$, and indeed to order $nn-1$; therefore, when we represent $\psi_n(u)$ in the form given by equation (8$^a$.),
 \begin{equation}
 \begin{cases}
-\psi_n(u) = C \dfrac{\sideset{}{'}\prod \left[\sigma\left(u - \dfrac{2\lambda\omega + 2\mu\omega'}{n}\right) e^{(2\lambda\eta + 2\mu\eta')\frac{u}{n}}\right]}{(\sigma u)^{nn-1}}\\begin{equation*}1.5em]
+\psi_n(u) = C \dfrac{\sideset{}{'}\prod \left[\sigma\left(u - \dfrac{2\lambda\omega + 2\mu\omega'}{n}\right) e^{(2\lambda\eta + 2\mu\eta')\frac{u}{n}}\right]}{(\sigma u)^{nn-1}} \\
 \phantom{\psi_n(u)} = C' \dfrac{\sideset{}{'}\prod \left[\sigma\left(u + \dfrac{2\lambda\omega + 2\mu\omega'}{n}\right) e^{-(2\lambda\eta + 2\mu\eta')\frac{u}{n}}\right]}{(\sigma u)^{nn-1}},
 \end{cases}
 \end{equation}

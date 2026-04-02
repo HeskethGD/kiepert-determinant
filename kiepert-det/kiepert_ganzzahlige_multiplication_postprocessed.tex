@@ -398,7 +398,7 @@ D_{n-1}(v) = \begin{vmatrix}
 \end{vmatrix} = 0.
 \end{equation}
 
-To investigate this determinant $D_{n-1}(v)$, we substitute the variable $u$ for the specific value $v$ for which it vanishes; then it follows first that $D_{n-1}(u)$ is an entire function of $\wp u$ and $\wp' u$, since the higher derivatives of $\wp u$ are entire functions of $\wp u$ and $\wp' u$. If we now replace $u$ by $-u$, only the odd derivatives of $\wp u$ change their sign, while the even ones remain unchanged. This gives, for
+To investigate this determinant $D_{n-1}(v)$, we substitute the variable value $u$ for the specific value $v$ for which it vanishes; it then follows immediately that $D_{n-1}(u)$ is an entire function of $\wp u$ and $\wp' u$, since the higher derivatives of $\wp u$ are entire functions of $\wp u$ and $\wp' u$. If we now replace $u$ by $-u$, only the odd derivatives of $\wp u$ change their sign, while the even ones remain unchanged. This gives, for
 \begin{equation*}
 m = \frac{n-1}{2} \text{ for odd } n
 \end{equation*}
@@ -434,7 +434,7 @@ D_{n-1}(-u) = (-1)^{n-1} D_{n-1}(u).
 
 Since $\wp u$ is an even function and $\wp' u$ is an odd function of $u$, it follows that $D_{n-1}(u)$ is, for odd $n$, an entire function of $\wp u$ alone, while for even $n$ it is an entire function of $\wp u$ multiplied by $\wp' u$.
 
-To determine the degree of these functions, we seek the first term in the expansion of $D_{n-1}(u)$ in powers of $u$, which we obtain by substituting into $D_{n-1}(u)$ only the first term of the expansion of $\wp' u$, $\wp'' u$, \ldots\ This yields the determinant\footnote{The dagger symbol in the original indicates a footnote or annotation.}
+To determine the degree of these functions, we seek the first term in the expansion of $D_{n-1}(u)$ in powers of $u$, which we obtain by substituting into $D_{n-1}(u)$ only the first term of the expansion of $\wp' u$, $\wp'' u$, \ldots\ This yields the determinant
 \begin{equation*}
 \begin{vmatrix}
 -2! u^{-3} & +3! u^{-4} & \cdots & (-1)^{n+1} n! u^{-n-1}\\
@@ -486,10 +486,12 @@ On the other hand, if $n$ is even, the factor $\wp' u$ separates out; this vanis
 
 $D_{n-1}(u)$ therefore vanishes for exactly the same values of $\wp u$ as $\psi_n(u)$, and thus is equal to $\psi_n(u)$ up to a constant factor. Now, the expansion of $\psi_n(u)$ begins with $nu^{-nn+1}$ and that of $D_{n-1}(u)$ with $(-1)^{n-1}n[2!3!\cdots(n-1)!]^2 u^{-nn+1}$, so
 \begin{equation}
+\tag{29.}
 \psi_n(u) = \frac{(-1)^{n-1} D_{n-1}(u)}{[2!3!\cdots(n-1)!]^2},
 \end{equation}
 or
 \begin{equation}
+\tag{29$^a$.}
 \psi_n(u) = \frac{(-1)^{n-1}}{[2!3!\cdots(n-1)!]^2} \begin{vmatrix}
 \wp' u & \wp'' u & \cdots & \wp^{(n-1)} u\\
 \wp'' u & \wp''' u & \cdots & \wp^{(n)} u\\
@@ -501,13 +503,14 @@ or
 % -- PAGE_BREAK --
 
 This representation holds, regardless of whether $n$ is even or odd, or whether $n$ is prime or composite.
+
 It should be mentioned that the equation
 \begin{equation*}
 D_{n-1}(u) = 0
 \end{equation*}
 yields those values of the function $\wp u$ at which the argument is an $n^{\text{th}}$ part of a period.
 
-One might think that computing the determinant presents great difficulties, but this is not the case to such a high degree when one does not insist on representing $\psi_n(u)$ as a function of $\wp u$ and the invariants $g_2$ and $g_3$, but instead allows the three functions $\wp u$, $\wp' u$, and $\wp'' u$ to stand in place of these three quantities; then the computation is extraordinarily simplified by using the following formulas, which the author has already given in his dissertation\footnote{L.\ Kiepert. De curvis quarum arcus integralibus ellipticis primi generis exprimuntur. Berlin 1870. Calvary. Seite 12.}:
+One might think that computing the determinant presents great difficulties, but this is not nearly so difficult if one does not insist on representing $\psi_n(u)$ as a function of $\wp u$ and the invariants $g_2$ and $g_3$, but instead allows the three functions $\wp u$, $\wp' u$, and $\wp'' u$ to stand in place of these three quantities; then the computation is extraordinarily simplified by using the following formulas, which the author has already given in his dissertation\footnote{L.\ Kiepert. De curvis quarum arcus integralibus ellipticis primi generis exprimuntur. Berlin 1870. Calvary. Seite 12.}:
 \begin{align*}
 \wp''' &= 6(\wp\wp' + \wp'\wp),\\
 \wp^{\text{IV}} &= 6(\wp\wp'' + 2\wp'^2 + \wp''\wp),\\
@@ -587,4 +590,28 @@ and
 \end{equation*}
 
 Freiburg i.\ Br., September 1872.
+
+\vspace{1in}
+\begin{center}
+\raisebox{0.5ex}{\rule{1in}{0.5pt}}\quad$\bullet$\quad$\diamond$\quad$\bullet$\quad\raisebox{0.5ex}{\rule{1in}{0.5pt}}
+\end{center}
+
+\newpage
+\section*{Translator's Notes}
+
+\vspace{1em}
+\noindent\textbf{Original paper.} Kiepert, L. (1873).
+Wirkliche Ausführung der ganzzahligen Multiplication der elliptischen Functionen.
+\textit{Journal für die reine und angewandte Mathematik}, 76, 21--33. \\[0.5em]
+EuDML: \url{https://eudml.org/doc/148242}
+
+\vspace{1em}
+
+\noindent This paper presents Kiepert's practical method for computing the multiplication formulas for elliptic functions with integer multipliers. 
+The determinant formula derived here (equation 29$^a$) is a key result that is cited by Frobenius and Stickelberger in their work on elliptic function theory, particularly in connection with what is commonly now referred to Frobenius-Stickelberger determinant formula.
+
+\vspace{1em}
+
+\noindent{Translated by K. Khazanzheiev and G. Hesketh, April 2026.}
+
 \end{document}

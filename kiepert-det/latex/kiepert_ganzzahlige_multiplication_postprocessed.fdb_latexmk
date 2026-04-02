@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1775153315.02466 "/Users/grahamhesketh/mycode/kiepert-determinant/kiepert-det/kiepert_ganzzahlige_multiplication_postprocessed.tex" "latex/kiepert_ganzzahlige_multiplication_postprocessed.pdf" "kiepert_ganzzahlige_multiplication_postprocessed" 1775153315.63104 0
-  "/Users/grahamhesketh/mycode/kiepert-determinant/kiepert-det/kiepert_ganzzahlige_multiplication_postprocessed.tex" 1775153314.80501 29139 7ac1e969237a802ac70725d6908cc8ef ""
+["pdflatex"] 1775153431.28614 "/Users/grahamhesketh/mycode/kiepert-determinant/kiepert-det/kiepert_ganzzahlige_multiplication_postprocessed.tex" "latex/kiepert_ganzzahlige_multiplication_postprocessed.pdf" "kiepert_ganzzahlige_multiplication_postprocessed" 1775153431.82159 0
+  "/Users/grahamhesketh/mycode/kiepert-determinant/kiepert-det/kiepert_ganzzahlige_multiplication_postprocessed.tex" 1775153431.10308 29274 194cb6c47c24627eb279ffff21381572 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -114,9 +114,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1767117489 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1767117381 3345747 f63bc61d33022117040a9f04f0c0b490 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "kiepert_ganzzahlige_multiplication_postprocessed.tex" 1775153314.80501 29139 7ac1e969237a802ac70725d6908cc8ef ""
-  "latex/kiepert_ganzzahlige_multiplication_postprocessed.aux" 1775153315.51144 245 63e38f5d314c533d5cf460eabf3b6a45 "pdflatex"
-  "latex/kiepert_ganzzahlige_multiplication_postprocessed.out" 1775153315.31129 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "kiepert_ganzzahlige_multiplication_postprocessed.tex" 1775153431.10308 29274 194cb6c47c24627eb279ffff21381572 ""
+  "latex/kiepert_ganzzahlige_multiplication_postprocessed.aux" 1775153431.71704 245 63e38f5d314c533d5cf460eabf3b6a45 "pdflatex"
+  "latex/kiepert_ganzzahlige_multiplication_postprocessed.out" 1775153431.53749 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "latex/kiepert_ganzzahlige_multiplication_postprocessed.aux"
   "latex/kiepert_ganzzahlige_multiplication_postprocessed.log"

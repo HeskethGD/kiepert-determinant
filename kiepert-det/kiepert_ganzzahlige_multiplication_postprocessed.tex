@@ -1,0 +1,590 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\geometry{a4paper,margin=1in}
+
+% Custom section command that preserves § symbol style
+\newcommand{\newsection}[3][]{%
+  \vspace{1.5em}%
+  \begin{center}%
+  \textbf{\large\S.~#2. #3}%
+  \end{center}%
+  \ifx&#1&\else\label{#1}\fi%
+  \vspace{0.5em}%
+}
+
+
+\title{
+    {\small\textit{English translation of Kiepert's}} \\[0.5em] 
+    \MakeUppercase{Practical Execution of the Integer Multiplication of Elliptic Functions}
+    \\[0.5em] {\small \textit{Journal für die reine und angewandte Mathematik} 76, 21-33 (1873)}
+    }
+\author{Ludwig Kiepert \\ Freiburg im Breisgau }
+\date{September, 1872} 
+
+\begin{document}
+\maketitle
+
+\medskip
+
+The problem of the rational multiplication of elliptic functions is completely solved in theory; indeed, two methods are known for its solution, one based on the repeated application of the addition theorem, and the other requiring a twofold transformation\footnote{Cf. K\"onigsberger, \textit{Die Transformation, die Multiplication und die Modulargleichungen der elliptischen Functionen}. Leipzig, 1868, Teubner. Page 116 ff. in §24.}. However, anyone who has attempted to carry out these methods in practice will have become convinced that both are nearly illusory, for the necessary algebraic operations can be managed only for very small multipliers. Furthermore, the multiplication formulas found in the dissertations of Messrs.~M\"uller\footnote{Felix M\"uller, \textit{De transformatione functionum ellipticarum}. Berlin 1867, Calvary.} and Simon\footnote{Max Simon, \textit{De relationibus inter constantes etc}. Berlin 1867, Calvary. The recursion formulas given by Mr. Simon on the last page of his dissertation are extremely useful in many cases where the multiplication of elliptic functions is applied.} would achieve the desired result only with very great expenditure of time when the multiplier exceeds five, yielding a result which, on account of its length, is no longer surveyable.
+
+Therefore, in what follows, we shall derive the multiplication formulas for an arbitrary integer multiplier in a completely surveyable form. To this end, I wish to employ the functions $\sigma u$ and $\wp u$ used by Mr.~Weierstrass in his lectures on elliptic functions, and I am all the more motivated to do so because my highly revered teacher intends to publish a compilation of the theorems and formulas relating to these functions.
+
+\newsection{1}{Some Theorems on Special Functions}
+
+Before proceeding to the solution of our problem, we must state at least briefly some theorems taken from the lectures of Mr.~Weierstrass.
+
+% -- PAGE_BREAK --
+
+Let $2\omega$ and $2\omega'$ be the primitive periods of an elliptic function, and let
+\begin{equation*}
+w = 2m\omega + 2n\omega',
+\end{equation*}
+then we form the everywhere convergent product
+\begin{equation}
+\sigma u = u \sideset{}{'}\prod \left(1 - \frac{u}{w}\right) e^{\frac{u}{w} + \frac{u^2}{2w^2}},
+\end{equation}
+where the prime on the product sign $\Pi$ indicates, as will also apply to the summation sign $\Sigma$ below, that $m$ and $n$ run through all positive and negative integer values but may not simultaneously be zero.
+This function $\sigma u$ vanishes only for
+\begin{equation*}
+u = w = 2m\omega + 2n\omega'
+\end{equation*}
+and never becomes infinite for finite values of $u$. Since for every value of $w = 2m\omega + 2n\omega'$ there is an opposite value $w = -2m\omega - 2n\omega'$, we can interchange $w$ and $-w$ without changing the function $\sigma u$. Therefore, if we substitute $-u$ for $u$, then $\sigma u$ merely changes its sign; that is, $\sigma u$ is an \emph{odd} function.
+
+From $\sigma u$ we derive the function $\wp u$ by differentiation, namely
+\begin{align*}
+\frac{d\log \sigma u}{du} = \frac{\sigma' u}{\sigma u} &= \frac{\sigma'}{\sigma}(u)\footnote{For brevity we write $\frac{\sigma'}{\sigma}(u)$ instead of $\frac{\sigma' u}{\sigma u}$.} = \frac{1}{u} + \sideset{}{'}\sum \left(\frac{1}{u-w} + \frac{1}{w} + \frac{u}{w^2}\right),\\
+\wp u &= -\frac{d^2\log \sigma u}{du^2} = \frac{1}{u^2} + \sideset{}{'}\sum \left(\frac{1}{(u-w)^2} - \frac{1}{w^2}\right),\\
+\wp' u &= -\frac{d^3\log \sigma u}{du^3} = \frac{-2}{u^3} - 2\sideset{}{'}\sum \frac{1}{(u-w)^3} = -2\sum \frac{1}{(u-w)^3},
+\end{align*}
+where the prime is now omitted from the summation sign $\Sigma$ because in $w = 2m\omega + 2n\omega'$ the values $m$ and $n$ may now both be zero simultaneously.
+
+From the form of the function $\wp' u$ it follows immediately that it has the periods $2\omega$ and $2\omega'$, for
+\begin{equation*}
+\wp'(u+2\omega) = \wp' u \quad \text{and} \quad \wp'(u+2\omega') = \wp' u.
+\end{equation*}
+Integrating these equations we obtain
+\begin{equation*}
+\wp(u+2\omega) = \wp u + C, \quad \wp(u+2\omega') = \wp u + C',
+\end{equation*}
+and thus, setting $u = -\omega$ and $u = -\omega'$ respectively,
+\begin{equation*}
+\wp \omega = \wp(-\omega) + C, \quad \wp \omega' = \wp(-\omega') + C'.
+\end{equation*}
+
+% -- PAGE_BREAK --
+Now $\wp u$ is an even function; consequently $C$ and $C'$ are equal to zero, so that $\wp u$ also has both periods $2\omega$ and $2\omega'$. Thus
+\begin{equation}
+\wp(u+2\omega) = \wp u \quad \text{and} \quad \wp(u+2\omega') = \wp u.
+\end{equation}
+All other periods that $\wp u$ possesses have the form $2m\omega + 2n\omega'$, where $m$ and $n$ are integers; therefore $2\omega$ and $2\omega'$ are called \emph{primitive periods} of $\wp u$.
+Integrating once more, and denoting the integration constants by $2\eta$ and $2\eta'$ respectively, we obtain
+\begin{equation}
+\frac{\sigma'}{\sigma}(u+2\omega) = \frac{\sigma'}{\sigma}(u) + 2\eta, \quad \frac{\sigma'}{\sigma}(u+2\omega') = \frac{\sigma'}{\sigma}(u) + 2\eta',
+\end{equation}
+or
+\begin{equation*}
+\frac{\sigma'}{\sigma}(\omega) = \frac{\sigma'}{\sigma}(-\omega) + 2\eta, \quad \frac{\sigma'}{\sigma}(\omega') = \frac{\sigma'}{\sigma}(-\omega') + 2\eta',
+\end{equation*}
+and since $\frac{\sigma'}{\sigma}(u)$ is an odd function,
+\begin{equation}
+\eta = \frac{\sigma'}{\sigma}(\omega), \quad \eta' = \frac{\sigma'}{\sigma}(\omega').
+\end{equation}
+
+Equation (3) can be generalized at once:
+\begin{equation}
+\tag{3$^a$.} \frac{\sigma'}{\sigma}(u+2m\omega+2n\omega') = \frac{\sigma'}{\sigma}(u) + 2m\eta + 2n\eta'.
+\end{equation}
+
+A further integration yields in a similar manner
+\begin{equation}
+\sigma(u+2m\omega+2n\omega') = (-1)^{mn+m+n} e^{(2m\eta+2n\eta')(u+m\omega+n\omega')} \sigma u.
+\end{equation}
+\emph{The function $\sigma u$ is therefore not periodic itself; rather, when the argument $u$ is increased by a period, it returns to itself multiplied by an exponential factor whose exponent is a linear function of $u$.}
+
+There is a relation between the quantities $\omega$, $\omega'$, $\eta$, $\eta'$ associated with this; namely, if the imaginary part of $\frac{\omega'}{\omega}$ is positive,
+\begin{equation}
+2\eta\omega' - 2\eta'\omega = \pi i,
+\end{equation}
+or more generally
+\begin{equation}
+\tag{6$^a$.} 2\tilde{\eta}\tilde{\omega}' - 2\tilde{\eta}'\tilde{\omega} = (mn' - m'n)\pi i,
+\end{equation}
+where
+\begin{equation}
+\begin{cases}
+\tilde{\omega} = m\omega + n\omega', & \tilde{\omega}' = m'\omega + n'\omega',\\
+\tilde{\eta} = m\eta + n\eta', & \tilde{\eta}' = m'\eta + n'\eta'.
+\end{cases}
+\end{equation}
+
+% -- PAGE_BREAK --
+
+If $2\tilde{\omega}$ and $2\tilde{\omega}'$ are again to form a primitive pair of periods, then
+\begin{equation*}
+mn' - m'n = +1
+\end{equation*}
+must hold.
+From the formulas adduced, it follows that the function
+\begin{equation}
+\varphi(u) = C \frac{\sigma(u-a_1)\sigma(u-a_2)\dots\sigma(u-a_r)}{\sigma(u-b_1)\sigma(u-b_2)\dots\sigma(u-b_r)}
+\end{equation}
+possesses both periods $2\omega$ and $2\omega'$, as soon as $\Sigma a = \Sigma b$ is, because upon substitution
+\begin{equation*}
+\varphi(u+2\omega) = \varphi(u) \quad \text{and} \quad \varphi(u+2\omega') = \varphi(u).
+\end{equation*}
+
+But it can also conversely be shown that every function which possesses both periods $2\omega$ and $2\omega'$ can be brought into that form. Here $a_1, a_2, \dots a_r$ is a complete system of non-congruent values of $u$ for which $\varphi(u)$ vanishes, and $b_1, b_2, \dots b_r$ a complete system of non-congruent values of $u$ for which $\varphi(u)$ becomes infinite. Each of these values is taken into account as often as its order indicates.
+
+If one therefore knows the zeros and infinities of a doubly periodic function $\varphi(u)$, then one can represent it in the form given by equation (8.). Thus, for example,
+\begin{align}
+\wp u - \wp v &= \frac{\sigma(v-u)\sigma(v+u)}{(\sigma v)^2 (\sigma u)^2},\\
+\wp' u &= -\frac{2\sigma(u-\omega)\sigma(u-\omega')\sigma(u+\omega+\omega')}{\sigma\omega\sigma\omega'\sigma(\omega+\omega')(\sigma u)^3},
+\end{align}
+or
+\begin{equation}
+\tag{10$^a$.} \wp' u = \frac{2\sigma(u+\omega)\sigma(u+\omega')\sigma(u-\omega-\omega')}{\sigma\omega\sigma\omega'\sigma(\omega+\omega')(\sigma u)^3}.
+\end{equation}
+
+By multiplication of these two values of $\wp' u$ and application of formula (9.) we find
+\begin{equation}
+(\wp' u)^2 = 4(\wp u - \wp\omega)(\wp u - \wp(\omega+\omega'))(\wp u - \wp\omega').
+\end{equation}
+
+For abbreviation we set
+\begin{equation*}
+\wp\omega = e_1, \quad \wp(\omega+\omega') = e_2, \quad \wp\omega' = e_3,
+\end{equation*}
+then it results, when we develop both sides of equation (11.),
+\begin{equation*}
+e_1 + e_2 + e_3 = 0,
+\end{equation*}
+thus
+\begin{equation}
+(\wp' u)^2 = 4(\wp u)^3 - g_2\wp u - g_3,
+\end{equation}
+
+% -- PAGE_BREAK --
+
+where
+\begin{equation}
+\begin{cases}
+g_2 = -4(e_2e_3 + e_3e_1 + e_1e_2) = 2(e_1^2 + e_2^2 + e_3^2),\\
+g_3 = 4e_1e_2e_3.
+\end{cases}
+\end{equation}
+
+Since
+\begin{equation*}
+\sigma(u-v) = \pm e^{2\tilde{\eta}(u-v-\tilde{\omega})} \sigma(u-v-2\tilde{\omega}),
+\end{equation*}
+we can also write equation (8) in the following form
+\begin{equation}
+\tag{8$^a$.} \varphi(u) = C_1 \frac{\sigma(u-a_1)\sigma(u-a_2)\dots\sigma(u-a_r)}{\sigma(u-b_1)\sigma(u-b_2)\dots\sigma(u-b_r)} e^{(2m\eta+2n\eta')u},
+\end{equation}
+where, however,
+\begin{equation*}
+\Sigma a = \Sigma b + 2m\omega + 2n\omega'
+\end{equation*}
+must hold.
+
+We must also mention a second representation of every doubly periodic function $\varphi(u)$. Among the values $b_1, b_2, \dots b_r$ of $u$ for which it becomes infinite, let there be only $m$ distinct values, namely
+\begin{equation*}
+b_1, \quad b_2, \quad \dots \quad b_m,
+\end{equation*}
+with orders respectively
+\begin{equation*}
+\alpha, \quad \beta, \quad \dots \quad \mu,
+\end{equation*}
+so that
+\begin{equation*}
+\alpha + \beta + \dots + \mu = r.
+\end{equation*}
+Now let the terms with negative powers in the expansion of $\varphi(u)$ in powers of $u-b_1$ be
+\begin{equation*}
+c_{1,\alpha}(u-b_1)^{-\alpha} + c_{1,\alpha-1}(u-b_1)^{-\alpha+1} + \dots + c_{1,1}(u-b_1)^{-1}
+\end{equation*}
+and
+\begin{equation}
+\varphi(u,b_1) = \sum_{\nu=1}^{\nu=\alpha} \frac{(-1)^{\nu-1}}{(\nu-1)!} c_{1,\nu} \frac{d^\nu \log\sigma(u-b_1)}{du^\nu}.
+\end{equation}
+
+Define $\varphi(u,b_2), \dots \varphi(u,b_m)$ correspondingly; then
+\begin{equation}
+\varphi(u) - \varphi(u,b_1) - \varphi(u,b_2) - \dots - \varphi(u,b_m) = g(u)
+\end{equation}
+is a function that cannot become infinite for any finite value of $u$; however, since its derivative is doubly periodic and every doubly periodic function must become infinite somewhere, the derivative of $g(u)$ can be at most a constant. If we substitute $u+2\omega$ for $u$ and $u+2\omega'$ for $u$ in equation (15), we find that this constant is zero, and that
+\begin{equation}
+c_{1,1} + c_{2,1} + \dots + c_{m,1} = 0
+\end{equation}
+% -- PAGE_BREAK --
+holds. Therefore $g(u)$ is itself a constant, which we denote by $g$, and thus we obtain
+\begin{equation}
+\varphi(u) = g + \varphi(u,b_1) + \varphi(u,b_2) + \dots + \varphi(u,b_m).
+\end{equation}
+
+For the case where $\varphi(u)$ becomes infinite of $n^{\text{th}}$ order only at $u \equiv 0$, we therefore have
+\begin{equation*}
+\varphi(u) = g + \sum_{\nu=1}^{\nu=n} \frac{(-1)^{\nu-1}}{(\nu-1)!} c_\nu \frac{d^\nu \log\sigma u}{du^\nu}.
+\end{equation*}
+
+From equation (16.) it follows that $c_1$ vanishes; thus
+\begin{equation*}
+\varphi(u) = g - c_2\frac{d^2\log\sigma u}{du^2} + \frac{c_3}{2}\frac{d^3\log\sigma u}{du^3} - \dots + \frac{(-1)^{n-1}}{(n-1)!} c_n \frac{d^n\log\sigma u}{du^n},
+\end{equation*}
+or since $-\frac{d^2\log\sigma u}{du^2} = \wp u$,
+\begin{equation}
+\begin{cases}
+\varphi(u) = g + c_2\wp u - \frac{c_3}{2}\wp' u + \dots + \frac{(-1)^n}{(n-1)!} c_n \wp^{(n-2)}u\\
+\phantom{\varphi(u)} = a_1 + a_2\wp u + a_3\wp' u + \dots + a_n\wp^{(n-2)}u.
+\end{cases}
+\end{equation}
+
+\newsection[sec:2]{2\footnote{Sections \S.2 and \S.3 contain theorems that have already been given in the dissertations of Messrs.~M\"uller and Simon, though in a different arrangement.}}{The Function $\psi_n(u) = \frac{\sigma(nu)}{(\sigma u)^{nn}}$}
+
+The task is to represent $\wp(nu)$ as a rational function of $\wp u$, where $n$ is a positive integer. For this purpose we employ the function
+\begin{equation}
+\psi_n(u) = \frac{\sigma(nu)}{(\sigma u)^{nn}}.
+\end{equation}
+
+This function has the same periods as $\wp u$, as follows from formula (5.):
+\begin{align*}
+\sigma n(u+2\omega) &= \sigma(nu + 2n\omega) = (-1)^n e^{2n\eta(nu+n\omega)} \sigma(nu)\\
+&= (-1)^n e^{2nn\eta(u+\omega)} \sigma(nu),
+\end{align*}
+and
+\begin{equation*}
+(\sigma u)^{nn} = (-1)^{nn} e^{2nn\eta(u+\omega)} (\sigma u)^{nn},
+\end{equation*}
+thus
+\begin{equation*}
+\psi_n(u+2\omega) = \psi_n(u),
+\end{equation*}
+and likewise
+\begin{equation*}
+\psi_n(u+2\omega') = \psi_n(u).
+\end{equation*}
+
+% -- PAGE_BREAK --
+Now, the function $\psi_n(u)$ vanishes for the $nn-1$ values
+\begin{equation*}
+u = \frac{2\lambda\omega + 2\mu\omega'}{n},
+\end{equation*}
+where $\lambda$ and $\mu$ assume the values $0, 1, 2, \dots, n-1$, but may not both vanish simultaneously. $\psi(u)$ becomes infinite only for $u \equiv 0$, and indeed to order $nn-1$; therefore, when we represent $\psi_n(u)$ in the form given by equation (8$^a$.),
+\begin{equation}
+\begin{cases}
+\psi_n(u) = C \dfrac{\sideset{}{'}\prod \left[\sigma\left(u - \dfrac{2\lambda\omega + 2\mu\omega'}{n}\right) e^{(2\lambda\eta + 2\mu\eta')\frac{u}{n}}\right]}{(\sigma u)^{nn-1}}\\begin{equation*}1.5em]
+\phantom{\psi_n(u)} = C' \dfrac{\sideset{}{'}\prod \left[\sigma\left(u + \dfrac{2\lambda\omega + 2\mu\omega'}{n}\right) e^{-(2\lambda\eta + 2\mu\eta')\frac{u}{n}}\right]}{(\sigma u)^{nn-1}},
+\end{cases}
+\end{equation}
+where the prime on $\Pi$ indicates that $\lambda$ and $\mu$ are not both zero.
+
+If we multiply the two expressions for $\psi_n(u)$ together, then applying equation (9.) we obtain
+\begin{equation}
+\psi_n(u) \cdot \psi_n(u) = C'' \sideset{}{'}\prod \left[\wp u - \wp\left(\frac{2\lambda\omega + 2\mu\omega'}{n}\right)\right].
+\end{equation}
+
+If $n$ is odd, then the right side also becomes a square, because when $\lambda + \lambda' \equiv \mu + \mu' \equiv 0 \pmod{n}$
+\[
+\wp\left(\frac{2\lambda\omega + 2\mu\omega'}{n}\right) = \wp\left(\frac{2\lambda'\omega + 2\mu'\omega'}{n}\right)
+\end{equation*}
+holds, and the systems of values for $\lambda, \mu$ can be ordered in pairs such that this condition is satisfied.
+
+If, however, $n$ is even, then the right side becomes a square multiplied by $(\wp' u)^2 = 4(\wp u)^3 - g_2\wp u - g_3$.
+
+From the expansion in powers of $u$ it follows by comparing the coefficients of the first terms on both sides
+\begin{equation*}
+C'' = n^2.
+\end{equation*}
+
+\newsection[sec:3]{3}{Connection between $\wp(nu)$ and $\psi_n(u)$}
+
+We have
+\begin{align*}
+\frac{d^2\log\psi_n(u)}{du^2} &= \frac{\psi_n(u)\psi_n''(u) - \psi_n'(u)\psi_n'(u)}{\psi(u) \cdot \psi(u)}\\
+&= \frac{d^2\log\sigma(nu)}{du^2} - n^2 \frac{d^2\log\sigma u}{du^2}\\
+&= -n^2\wp(nu) + n^2\wp u,
+\end{align*}
+
+% -- PAGE_BREAK --
+
+thus
+\begin{equation}
+\wp(nu) = \wp u + \frac{\psi_n'(u)\psi_n'(u) - \psi_n(u)\psi_n''(u)}{nn\psi_n(u)\psi_n(u)}.
+\end{equation}
+
+A second relation between $\wp(nu)$ and $\psi(u)$ follows from formula (9)
+\begin{equation*}
+\wp u_2 - \wp u_1 = \frac{\sigma(u_1-u_2)\sigma(u_1+u_2)}{(\sigma u_1)^2 (\sigma u_2)^2},
+\end{equation*}
+for if we set
+\begin{equation*}
+u_1 = u, \quad u_2 = nu,
+\end{equation*}
+we obtain
+\begin{equation*}
+\wp(nu) - \wp u = -\frac{\sigma(n-1)u \cdot \sigma(n+1)u}{(\sigma u)^2 (\sigma nu)^2}.
+\end{equation*}
+
+If we divide the numerator and denominator on the right-hand side by
+\begin{equation*}
+(\sigma u)^{(n-1)(n-1) + (n+1)(n+1)} = (\sigma u)^{2nn+2},
+\end{equation*}
+then
+\begin{equation}
+\wp(nu) = \wp u - \frac{\psi_{n-1}(u)\psi_{n+1}(u)}{\psi_n(u)\psi_n(u)}.
+\end{equation}
+
+It therefore remains only to calculate $\psi_n(u)$ in general, a task whose complete solution will be given in what follows.
+
+\newsection{4}{Representation of the Function $\psi_n(u)$ in terms of $\wp u$ and its derivatives.}
+
+Let
+\begin{equation}
+f(u) = \frac{e^{wu}\sigma(u-v)}{\sigma v \sigma u},
+\end{equation}
+then
+\begin{align*}
+f(u+2\omega) &= \frac{-e^{wu+2w\omega} e^{2\eta(u-v+\omega)} \sigma(u-v)}{-e^{2\eta(u+\omega)} \sigma v \sigma u}\\
+&= e^{2w\omega - 2\eta v} \cdot f(u).
+\end{align*}
+
+Likewise,
+\begin{equation*}
+f(u+2\omega') = e^{2w\omega' - 2\eta' v} \cdot f(u).
+\end{equation*}
+
+Now let us set
+\begin{equation}
+v = \frac{2\lambda\omega + 2\mu\omega'}{n}, \quad w = \frac{2\lambda\eta + 2\mu\eta'}{n},
+\end{equation}
+where $\lambda$ and $\mu$ may take the values $0, 1, 2, \dots, n-1$---provided they are not both zero---then
+\begin{align*}
+2w\omega - 2\eta v &= \frac{4\mu}{n}(\eta'\omega - \eta\omega') = -\frac{2\mu}{n}\pi i,\\
+2w\omega' - 2\eta' v &= \frac{4\lambda}{n}(\eta\omega' - \eta'\omega) = +\frac{2\lambda}{n}\pi i;
+\end{align*}
+
+from which it follows that
+\begin{equation}
+f(u+2\omega) = e^{-\frac{2\mu}{n}\pi i} f(u), \quad f(u+2\omega') = e^{\frac{2\lambda}{n}\pi i} f(u),
+\end{equation}
+i.e., $f(u)$ does not have the periods $2\omega$, $2\omega'$; however, when $u$ is increased by one of these periods, $f(u)$ is multiplied by an $n^{\text{th}}$ root of unity. From this it follows that the $n^{\text{th}}$ power of $f(u)$ has the periods $2\omega$, $2\omega'$.
+
+We can therefore expand this function as follows according to equation (18), since $f^n(u)$ becomes infinite of order $n$ only when $u$ is congruent to zero:
+\begin{equation}
+f^n(u) = a_1 + a_2\wp u + a_3\wp' u + \cdots + a_n \wp^{(n-2)} u.
+\end{equation}
+
+Here we have $n$ coefficients $a_1, a_2, a_3, \ldots, a_n$, still temporarily unknown, which we can determine by the condition that $f^n(u)$, together with its first $n-1$ derivatives, must vanish for $u=v$; thus
+\begin{align*}
+1)\qquad & a_1 + a_2\wp v + a_3\wp' v + \cdots + a_n \wp^{(n-2)} v = 0,\\
+2)\qquad & a_2\wp' v + a_3\wp'' v + \cdots + a_n \wp^{(n-1)} v = 0,\\
+3)\qquad & a_2\wp'' v + a_3\wp''' v + \cdots + a_n \wp^{(n)} v = 0,\\
+&\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\quad\cdot\\
+n)\qquad & a_2\wp^{(n-1)} v + a_3\wp^{(n)} v + \cdots + a_n \wp^{(2n-3)} v = 0.
+\end{align*}
+
+The first of these equations serves only to determine $a_1$; the others form a system of $n-1$ linear, homogeneous equations in the $n-1$ unknowns $a_2, a_3, \ldots, a_n$; consequently, the determinant of this system must vanish:
+\begin{equation}
+D_{n-1}(v) = \begin{vmatrix}
+\wp' v & \wp'' v & \cdots & \wp^{(n-1)} v\\
+\wp'' v & \wp''' v & \cdots & \wp^{(n)} v\\
+\cdot & \cdot & \cdot & \cdot\\
+\wp^{(n-1)} v & \wp^{(n)} v & \cdots & \wp^{(2n-3)} v
+\end{vmatrix} = 0.
+\end{equation}
+
+To investigate this determinant $D_{n-1}(v)$, we substitute the variable $u$ for the specific value $v$ for which it vanishes; then it follows first that $D_{n-1}(u)$ is an entire function of $\wp u$ and $\wp' u$, since the higher derivatives of $\wp u$ are entire functions of $\wp u$ and $\wp' u$. If we now replace $u$ by $-u$, only the odd derivatives of $\wp u$ change their sign, while the even ones remain unchanged. This gives, for
+\begin{equation*}
+m = \frac{n-1}{2} \text{ for odd } n
+\end{equation*}
+and
+\begin{equation*}
+m = \frac{n-2}{2} \text{ for even } n,
+\end{equation*}
+\begin{equation*}
+D_{n-1}(-u) = \begin{vmatrix}
+-\wp' u & +\wp'' u & -\wp''' u & \cdots\\
++\wp'' u & -\wp''' u & +\wp^{\text{IV}} u & \cdots\\
+-\wp''' u & +\wp^{\text{IV}} u & -\wp^{\text{V}} u & \cdots\\
+\cdot & \cdot & \cdot & \cdot
+\end{vmatrix} = (-1)^m \begin{vmatrix}
+-\wp' u & +\wp'' u & -\wp''' u & \cdots\\
+-\wp'' u & +\wp''' u & -\wp^{\text{IV}} u & \cdots\\
+-\wp''' u & +\wp^{\text{IV}} u & -\wp^{\text{V}} u & \cdots\\
+\cdot & \cdot & \cdot & \cdot
+\end{vmatrix}
+\end{equation*}
+\begin{equation*}
+= (-1)^{n-1} \begin{vmatrix}
+\wp' u & \wp'' u & \wp''' u & \cdots\\
+\wp'' u & \wp''' u & \wp^{\text{IV}} u & \cdots\\
+\wp''' u & \wp^{\text{IV}} u & \wp^{\text{V}} u & \cdots\\
+\cdot & \cdot & \cdot & \cdot
+\end{vmatrix},
+\end{equation*}
+thus
+\begin{equation}
+D_{n-1}(-u) = (-1)^{n-1} D_{n-1}(u).
+\end{equation}
+
+Since $\wp u$ is an even function and $\wp' u$ is an odd function of $u$, it follows that $D_{n-1}(u)$ is, for odd $n$, an entire function of $\wp u$ alone, while for even $n$ it is an entire function of $\wp u$ multiplied by $\wp' u$.
+
+To determine the degree of these functions, we seek the first term in the expansion of $D_{n-1}(u)$ in powers of $u$, which we obtain by substituting into $D_{n-1}(u)$ only the first term of the expansion of $\wp' u$, $\wp'' u$, \ldots\ This yields the determinant\footnote{The dagger symbol in the original indicates a footnote or annotation.}
+\begin{equation*}
+\begin{vmatrix}
+-2! u^{-3} & +3! u^{-4} & \cdots & (-1)^{n+1} n! u^{-n-1}\\
++3! u^{-4} & -4! u^{-5} & \cdots & (-1)^{n+2} (n+1)! u^{-n-2}\\
+\cdot & \cdot & \cdot & \cdot\\
+(-1)^{n+1} n! u^{-n-1} & (-1)^{n+2} (n+1)! u^{-n-2} & \cdots & (-1)^{2n-1} (2n-2)! u^{-2n+1}
+\end{vmatrix}
+\end{equation*}
+\begin{equation*}
+= (-1)^{n-1} \begin{vmatrix}
+2! u^{-3} & 3! u^{-4} & \cdots & n! u^{-n-1}\\
+3! u^{-4} & 4! u^{-5} & \cdots & (n+1)! u^{-n-2}\\
+\cdot & \cdot & \cdot & \cdot\\
+n! u^{-n-1} & (n+1)! u^{-n-2} & \cdots & (2n-2)! u^{-2n+1}
+\end{vmatrix}.
+\end{equation*}
+
+% -- PAGE_BREAK --
+
+In this determinant, the element standing in the $\alpha^{\text{th}}$ row and $\beta^{\text{th}}$ column is
+\begin{equation*}
+(\alpha+\beta)! u^{-\alpha-\beta-1};
+\end{equation*}
+since, however, every term of the computed determinant contains one element from each row and each column, the exponent of $u$ in every term is
+\begin{equation*}
+-\Sigma\alpha - \Sigma\beta - 1\cdot(n-1) = -2(1+2+\cdots+n-1)-(n-1) = -(nn-1).
+\end{equation*}
+The first term in the expansion of $D_{n-1}(u)$ is therefore
+\begin{equation*}
+(-1)^{n-1} \begin{vmatrix}
+2! & 3! & \cdots & n!\\
+3! & 4! & \cdots & (n+1)!\\
+\cdot & \cdot & \cdots & \cdot\\
+n! & (n+1)! & \cdots & (2n-2)!
+\end{vmatrix} u^{-nn+1}
+\end{equation*}
+\begin{equation*}
+= (-1)^{n-1} n[2!3!\cdots(n-1)!]^2 u^{-nn+1}.
+\end{equation*}
+
+The expansion of $\wp u$ begins with $u^{-2}$ and that of $\wp' u$ with $-2u^{-3}$; consequently, for odd $n$, $D_{n-1}(u)$ is an entire function of degree $\frac{nn-1}{2}$ in $\wp u$, while for even $n$ it is the product of $\wp' u$ and an entire function of degree $\frac{nn-4}{2}$ in $\wp u$. The degree of these functions coincides exactly with the number of values of $\wp u$ at which they vanish. Indeed, $D_{n-1}(u)$ vanishes for the $nn-1$ values
+\begin{equation*}
+u = v = \frac{2\lambda\omega + 2\mu\omega'}{n}.
+\end{equation*}
+
+If $n$ is odd, then each pair of values of $v$ yields the same value of $\wp v$, so $D_{n-1}(u)$ vanishes for exactly $\frac{nn-1}{2}$ values of $\wp u$.
+
+On the other hand, if $n$ is even, the factor $\wp' u$ separates out; this vanishes for $u = \omega, \omega', \omega+\omega'$. Of the remaining $nn-4$ values of $v$, each pair again yields the same value of $\wp v$, giving exactly $\frac{nn-4}{2}$ values of $\wp u$ at which $D_{n-1}(u)$ vanishes.
+
+$D_{n-1}(u)$ therefore vanishes for exactly the same values of $\wp u$ as $\psi_n(u)$, and thus is equal to $\psi_n(u)$ up to a constant factor. Now, the expansion of $\psi_n(u)$ begins with $nu^{-nn+1}$ and that of $D_{n-1}(u)$ with $(-1)^{n-1}n[2!3!\cdots(n-1)!]^2 u^{-nn+1}$, so
+\begin{equation}
+\psi_n(u) = \frac{(-1)^{n-1} D_{n-1}(u)}{[2!3!\cdots(n-1)!]^2},
+\end{equation}
+or
+\begin{equation}
+\psi_n(u) = \frac{(-1)^{n-1}}{[2!3!\cdots(n-1)!]^2} \begin{vmatrix}
+\wp' u & \wp'' u & \cdots & \wp^{(n-1)} u\\
+\wp'' u & \wp''' u & \cdots & \wp^{(n)} u\\
+\cdot & \cdot & \cdot & \cdot\\
+\wp^{(n-1)} u & \wp^{(n)} u & \cdots & \wp^{(2n-3)} u
+\end{vmatrix}.
+\end{equation}
+
+% -- PAGE_BREAK --
+
+This representation holds, regardless of whether $n$ is even or odd, or whether $n$ is prime or composite.
+It should be mentioned that the equation
+\begin{equation*}
+D_{n-1}(u) = 0
+\end{equation*}
+yields those values of the function $\wp u$ at which the argument is an $n^{\text{th}}$ part of a period.
+
+One might think that computing the determinant presents great difficulties, but this is not the case to such a high degree when one does not insist on representing $\psi_n(u)$ as a function of $\wp u$ and the invariants $g_2$ and $g_3$, but instead allows the three functions $\wp u$, $\wp' u$, and $\wp'' u$ to stand in place of these three quantities; then the computation is extraordinarily simplified by using the following formulas, which the author has already given in his dissertation\footnote{L.\ Kiepert. De curvis quarum arcus integralibus ellipticis primi generis exprimuntur. Berlin 1870. Calvary. Seite 12.}:
+\begin{align*}
+\wp''' &= 6(\wp\wp' + \wp'\wp),\\
+\wp^{\text{IV}} &= 6(\wp\wp'' + 2\wp'^2 + \wp''\wp),\\
+\wp^{\text{V}} &= 6(\wp\wp''' + 3\wp'\wp'' + 3\wp''\wp' + \wp'''\wp),\\
+\cdot\ \cdot\ \cdot\ &\cdot\ \cdot\ \cdot\ \cdot\ \cdot\ \cdot\ \cdot\ \cdot\ \cdot\ \cdot\\
+\wp^{(n+2)} &= 6\Bigl(\wp\wp^{(n)} + \frac{n}{1}\wp'\wp^{(n-1)} + \frac{n(n-1)}{1\cdot 2}\wp''\wp^{(n-2)} + \cdots\Bigr).
+\end{align*}
+
+In many applications, computing the determinant will not even be necessary; rather, $\psi_n(u)$ will be most conveniently used precisely in its determinant form because of its clarity.
+
+The author has already verified the correctness of these assertions in geometrical applications, which he intends to publish shortly.
+
+\newsection{5}{Extension of the multiplication problem.}
+
+Let it no longer be the task to derive an equation between $\wp(nu)$ and $\wp u$, but rather let relations be sought that exist between
+\begin{equation*}
+\wp u,\quad \wp(2u),\quad \wp(3u),\quad \ldots
+\end{equation*}
+and the derivatives of these functions.
+
+This task may first be clarified by a simple example.
+
+% -- PAGE_BREAK --
+
+The doubly periodic function
+\begin{equation}
+F(u) = \frac{\sigma(u-v)\sigma(u-2v)\sigma(u+3v)}{(\sigma u)^3}
+\end{equation}
+can be brought into the form
+\begin{equation}
+F(u) = a_1 + a_2\wp u + a_3\wp' u
+\end{equation}
+Since $F(u)$ now vanishes for $u = v$, $2v$, $-3v$, we have
+\begin{align*}
+a_1 + a_2\wp v \quad + a_3\wp' v \quad &= 0,\\
+a_1 + a_2\wp(2v) + a_3\wp'(2v) &= 0,\\
+a_1 + a_2\wp(3v) - a_3\wp'(3v) &= 0,
+\end{align*}
+thus
+\begin{equation}
+\begin{vmatrix}
+1 & \wp v & \wp' v\\
+1 & \wp(2v) & \wp'(2v)\\
+1 & \wp(3v) & -\wp'(3v)
+\end{vmatrix} = 0.
+\end{equation}
+
+Similarly, we obtain
+\begin{equation}
+\begin{vmatrix}
+1 & \wp(mv) & \wp'(mv)\\
+1 & \wp(nv) & \wp'(nv)\\
+1 & \wp(rv) & -\wp'(rv)
+\end{vmatrix} = 0,
+\end{equation}
+when
+\begin{equation*}
+r = m+n \quad\text{and}\quad m \geq n.
+\end{equation*}
+Here $v$ is an arbitrary variable, as is $u$.
+
+Quite generally, a corresponding relation can be found between
+\begin{equation*}
+\wp(av),\quad \wp(bv),\quad \ldots\quad \wp(mv)
+\end{equation*}
+and the derivatives of these quantities, when we set
+\begin{equation*}
+F(u) = \frac{\sigma^\alpha(u-av)\sigma^\beta(u-bv)\cdots\sigma^\mu(u-mv)}{(\sigma u)^n}.
+\end{equation*}
+Here $a, b, \ldots m$ can be positive or negative fractional numbers, while $\alpha, \beta, \ldots \mu$ are positive integers. In addition, we must have
+\begin{equation*}
+\alpha a + \beta b + \cdots + \mu m = 0
+\end{equation*}
+and
+\begin{equation*}
+\alpha + \beta + \cdots + \mu = n.
+\end{equation*}
+
+Freiburg i.\ Br., September 1872.
+\end{document}
